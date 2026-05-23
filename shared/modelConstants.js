@@ -29,7 +29,9 @@ export const CLAUDE_MODELS = {
  * Cursor Models
  */
 export const CURSOR_MODELS = {
-  OPTIONS: [
+  OPTIONS: [    
+    { value: "auto", label: "Auto" },    
+    { value: "composer-2.5", label: "Composer 2.5" },
     { value: "opus-4.6-thinking", label: "Claude 4.6 Opus (Thinking)" },
     { value: "gpt-5.3-codex", label: "GPT-5.3" },
     { value: "gpt-5.2-high", label: "GPT-5.2 High" },
@@ -39,7 +41,6 @@ export const CURSOR_MODELS = {
     { value: "gpt-5.1", label: "GPT-5.1" },
     { value: "gpt-5.1-high", label: "GPT-5.1 High" },
     { value: "composer-1", label: "Composer 1" },
-    { value: "auto", label: "Auto" },
     { value: "sonnet-4.5", label: "Claude 4.5 Sonnet" },
     { value: "sonnet-4.5-thinking", label: "Claude 4.5 Sonnet (Thinking)" },
     { value: "opus-4.5", label: "Claude 4.5 Opus" },
@@ -51,7 +52,7 @@ export const CURSOR_MODELS = {
     { value: "grok", label: "Grok" },
   ],
 
-  DEFAULT: "gpt-5.3-codex",
+  DEFAULT: "auto",
 };
 
 /**
@@ -100,8 +101,8 @@ export const GEMINI_MODELS = {
  * Ordered provider registry. Display order in selection UIs.
  */
 export const PROVIDERS = [
+  { id: "cursor", name: "Cursor", models: CURSOR_MODELS },
   { id: "claude", name: "Anthropic", models: CLAUDE_MODELS },
   { id: "codex", name: "OpenAI", models: CODEX_MODELS },
   { id: "gemini", name: "Google", models: GEMINI_MODELS },
-  { id: "cursor", name: "Cursor", models: CURSOR_MODELS },
 ];
